@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url('images/nail-art-simple.jpg') no-repeat center center/cover;
+  text-align: center;
+  font-family: "Euclid Circular A", "Poppins";
+}
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.content {
+  position: relative;
+  z-index: 2;
+}
+.accordion {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 400px;
+  gap: 16px;
+  transition: 0.3s;
+  z-index: 3;
+}
+.accordion:hover {
+  gap: 0;
+}
+.accordion li {
+  position: relative;
+  overflow: hidden;
+  flex: 0 0 80px;
+  border-radius: 50px;
+  opacity: 0.75;
+  cursor: pointer;
+  z-index: 3;
+}
+.accordion li img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.5);
+}
+.accordion li,
+.accordion li img,
+.accordion li .content,
+.accordion li .content span {
+  transition: 0.3s;
+}
+.accordion h2 {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 45px;
+  border-bottom: 2px solid #fff;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+.accordion li .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  color: #fff;
+  padding: 15px;
+  background: #02022e;
+  background: linear-gradient(
+    0deg,
+    rgb(0 0 0 / 70%) 10%,
+    rgb(255 255 255 / 0%) 100%
+  );
+  opacity: 0;
+  visibility: hidden;
+}
+.accordion li .content span {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 50px;
+  translate: -50%;
+  scale: 0.85;
+  visibility: hidden;
+  opacity: 0;
+}
+.accordion li:hover {
+  flex: 0 1 260px;
+  scale: 1.1;
+  z-index: 10;
+  opacity: 1;
+}
+.accordion li:hover .content {
+  opacity: 1;
+  visibility: visible;
+}
+.accordion li:hover span {
+  scale: 1;
+  opacity: 1;
+  visibility: visible;
+}
+.wa-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 15px 25px;
+    background-color: #873b77;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+.wa-button img.wa-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.pricelist-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #ffb6d1;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    letter-spacing: 1px;
+}
