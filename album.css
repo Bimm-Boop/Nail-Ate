@@ -12,6 +12,19 @@ body {
   color: #fff;
   background-color: #1a1a1a;
 }
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    z-index: 10;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
 .slide-heading a {
     color: inherit;
     text-decoration: none;
